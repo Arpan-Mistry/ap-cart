@@ -1,1 +1,1 @@
-web: gunicorn apcart.wsgi
+release: python manage.py migrate
