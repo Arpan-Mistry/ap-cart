@@ -1,0 +1,59 @@
+{% extends 'shop/basic.html' %}
+{% block title %} About Us{% endblock %}
+{% block css%}
+.btn-outline-success{
+        color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-outline-success{
+        color: #ffffff;
+    border-color: #ffffff;
+}
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">apCart</h1>
+      <p>Established by Arpan Mistry (Python programmer)<br>apCart sells on-demand personalized items.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Our Aim</h2>
+        <p>To ensure customer satisfaction,we are improving our services day by day ,we quickly deliver products at your doorstep.<br><br><br><br></p>
+        <p><a class="btn btn-secondary" href={% url 'contact'%} role="button">Know More! &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Features</h2>
+        <p>Free Delivery Allover India<br>Auto Categorization of Products<br>Search Utility<br>Secured Tracking Service<br>System Genrated mail Acknoledgement<br>Rapid Updates</p>
+        <p><a class="btn btn-secondary" href={% url 'contact'%} role="button">Suggest Us! &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Our Structure</h2>
+        <p>apCart site is made with Python based Django Framework,our developer have used javascript and jquery to deliver key services,We have developed System integrated email -bot service to acknoledge Customer<br><br></p>
+        <p><a class="btn btn-secondary" href={% url 'contact'%} role="button">Contact &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script></body>
+</html>
+
+
+{% endblock %}
