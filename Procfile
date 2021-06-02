@@ -1,1 +1,1 @@
-web: gunicorn apcart.wsgi
+web: gunicorn apcart.wsgi --log-file -
