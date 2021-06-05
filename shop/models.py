@@ -1,4 +1,6 @@
 from django.db import models
+from storage_backends import PrivateMediaStorage
+
 
 # Create your models here.
 class products(models.Model):

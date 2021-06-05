@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import django_heroku
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +28,7 @@ DEBUG = True
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','apcart-shop.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,8 +124,8 @@ USE_TZ = True
 import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-MEDIA_URL = 'https://s3.ap-south-1.amazonaws.com/arpan.mistry.8000/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # Default primary key field type
@@ -146,9 +145,18 @@ DEFAULT_FROM_EMAIL = 'default from email'
 AWS_ACCESS_KEY_ID = 'AKIA2BDPNEQSVTWVVPEF'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'arpan.mistry.8000'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+AWS_LOCATION = 'static'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+AWS_STATIC_LOCATION = 'static'
+AWS_PUBLIC_MEDIA_LOCATION = 'media'
+AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
+
+
 
 AWS_S3_FILE_OVERWRITE=False
 AWS_DEFAULT_ACL=None
