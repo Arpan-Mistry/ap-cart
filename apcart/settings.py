@@ -124,15 +124,14 @@ USE_TZ = True
 import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = 'https://s3.ap-south-1.amazonaws.com/arpan.mistry.8000/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -146,10 +145,18 @@ DEFAULT_FROM_EMAIL = 'default from email'
 AWS_ACCESS_KEY_ID = 'AKIA2BDPNEQSVTWVVPEF'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'arpan.mistry.8000'
+AWS_QUERYSTRING_AUTH = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+AWS_S3_FILE_OVERWRITE=False
+AWS_DEFAULT_ACL=None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
 
 
 
