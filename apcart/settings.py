@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
-    'storages',
+    # 'storages',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['shop/templates'],
-         'DIRS': ['apcart/templates'],
+        'DIRS': ['apcart/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,21 +142,21 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
 
-AWS_ACCESS_KEY_ID = 'AKIA2BDPNEQSVTWVVPEF'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'arpan.mistry.8000'
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+# AWS_ACCESS_KEY_ID = 'AKIA2BDPNEQSVTWVVPEF'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'arpan.mistry.8000'
+# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+# AWS_QUERYSTRING_AUTH = False
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
 
 
 
 
-AWS_S3_FILE_OVERWRITE=False
-AWS_DEFAULT_ACL=None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_FILE_OVERWRITE=False
+# AWS_DEFAULT_ACL=None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
