@@ -75,7 +75,7 @@ sagittis lacus vel augue laoreet rutrum faucibus." style='background-color:#383a
                     {% for i in product %}
                     <div class="col-xs-3 col-sm-3 col-md-3">
                         <div class="card align-items-center" style="width: 18rem;">
-                            <img src='/media/{{i.image}}' alt='https://s3.ap-south-1.amazonaws.com/arpan.mistry.8000/{{i.image}}' class="card-img-top" alt="...">
+                            <img src='/media/{{i.image}}' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:"0:23"}}</h5>
                                 <p class="card-text">{{i.desc|slice:"0:27"}}...</p>

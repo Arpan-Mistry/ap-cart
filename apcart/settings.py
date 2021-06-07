@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,22 +25,20 @@ SECRET_KEY = 'django-insecure-8=(3n*hsxs$0#2lermh1845muen(5@r7e6+bme_%4o2(@u638e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.contenttypes',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
-    # 'storages',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -53,13 +50,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 ROOT_URLCONF = 'apcart.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['shop/templates'],
-        'DIRS': ['apcart/templates'],
+         'DIRS': ['apcart/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,15 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 import os
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATIC_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR,'media')
-
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL= '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -141,34 +138,3 @@ EMAIL_HOST_PASSWORD = 'apcart@000' #past the key or password app here
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
-
-# AWS_ACCESS_KEY_ID = 'AKIA2BDPNEQSVTWVVPEF'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'arpan.mistry.8000'
-# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-# AWS_QUERYSTRING_AUTH = False
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-
-
-
-
-# AWS_S3_FILE_OVERWRITE=False
-# AWS_DEFAULT_ACL=None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATIC_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-
-
-
-
-
-
-
-
-
-django_heroku.settings(locals())
-
-
-
